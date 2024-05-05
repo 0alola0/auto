@@ -5,12 +5,27 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  mode: "jit",
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        'helvetica-neue': ['Helvetica Neue LT GEO', 'sans-serif'],
+        'sailec': ['TBC Sailec', 'sans-serif'],
+      },
+      colors: {
+        "active-orange": "#FD4100",
+        "secondary-text": "#6F7383",
+        "gray-bg": "#F2F2F6",
+      },
+      fontSize: {
+        xs: '12px',
+        sm: '13px',
+      },
+      height: {
+        fit: 'fit-content',
+      },
+      boxShadow: {
+        custom: '0px 2px 16px 0px rgba(39, 42, 55, 0.13)',
       },
     },
   },
