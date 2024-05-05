@@ -28,7 +28,7 @@ const AppFilter = ({setSortOrder, setSortTime, total }) => {
     setStateFunc(selectedItems);
   };
   return (
-    <div className="mb-4 flex justify-between items-center">
+    <div className="mb-4 gap-3 items-start flex-col flex md:flex-row justify-between md:items-center">
       <span className="font-helvetica-neue text-base font-normal leading-[19.31px]">{total} განცხადება</span>
       <div className="flex justify-end gap-2">
         <AppFilterSelector

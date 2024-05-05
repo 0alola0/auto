@@ -1,17 +1,17 @@
 import React from "react";
 import AppImage from "../../AppImage";
 
-const AppCarSpecs = ({ engine, odometer, gear, wheel, price }) => {
+const AppCarSpecs = ({ engine, odometer, gear, wheel, price, client }) => {
   return (
-    <div className="mb-4 grid grid-cols-3 grid-rows-2 ">
+    <div className="mb-[14px] md:mb-4 grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 ">
       <div className="flex items-center gap-3">
-        <AppImage src="/engine.svg" width="16" height="16" alt="flag" />
+        <AppImage className="hidden md:block" src="/engine.svg" width="16" height="16" alt="flag" />
         <span className="font-sailec text-sm font-medium leading-12 text-left">
           {engine}
         </span>
       </div>
       <div className="flex items-center gap-3">
-        <AppImage src="/odometer.svg" width="16" height="16" alt="flag" />
+        <AppImage className="hidden md:block" src="/odometer.svg" width="16" height="16" alt="flag" />
         <span className="font-sailec text-sm font-medium leading-12 text-left">
           {odometer} კმ
         </span>
@@ -25,16 +25,30 @@ const AppCarSpecs = ({ engine, odometer, gear, wheel, price }) => {
         </h4>
       </div>
       <div className="flex items-center gap-3">
-        <AppImage src="/gear.svg" width="16" height="16" alt="flag" />
+        <AppImage className="hidden md:block" src="/gear.svg" width="16" height="16" alt="flag" />
         <span className="font-sailec text-sm font-medium leading-12 text-left">
           {gear}
         </span>
       </div>
       <div className="flex items-center gap-3">
-        <AppImage src="/wheel.svg" width="16" height="16" alt="flag" />
+        <AppImage className="hidden md:block" src="/wheel.svg" width="16" height="16" alt="flag" />
         <span className="font-sailec text-sm font-medium leading-12 text-left">
           {wheel? "მარჯვენა" : "მარცხენა"}
         </span>
+      </div>
+      <div className="flex md:hidden items-center gap-3">
+        <AppImage className="hidden md:block" src="/wheel.svg" width="16" height="16" alt="flag" />
+        <span className="font-sailec text-sm font-medium leading-12 text-left">
+          {wheel? "მარჯვენა" : "მარცხენა"}
+        </span>
+      </div>
+      <div className="flex md:hidden items-center gap-3">
+      <div className="flex gap-2">
+          <AppImage src="/flagicon.svg" width="16" height="16" alt="flag" />
+          <span className="font-sailec text-sm font-medium leading-12 text-left">
+            {client.length > 12 ? `${client.substring(0, 12)}.` : client}
+          </span>
+        </div>
       </div>
     </div>
   );

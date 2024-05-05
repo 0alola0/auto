@@ -12,7 +12,10 @@ const AppCarCard = ({ car }) => {
 
   let source = `https://static.my.ge/myauto/photos/${car.photo}/thumbs/${car.car_id}_1.jpg?v=${car.photo_ver}`;
   return (
-    <div className="w-[100vw] ml-[-20px] mb-0 flex flex-col md:flex-row items-center gap-4 p-4 bg-white border-gray rounded-0 md:rounded-[14px] md:mb-[10px] md:w-full md:ml-0">
+    <div className="w-[100vw] ml-[-20px] mb-0 flex flex-col md:flex-row items-center gap-3 md:gap-4 px-4 pt-[18px] md:p-4 bg-white border-gray rounded-0 md:rounded-[14px] md:mb-[10px] md:w-full md:ml-0">
+      <div className="block w-full md:hidden">
+        <AppCardMeta views={car.views} ago={`${orderResult} დღის წინ`} />
+      </div>
       <div className="block w-full md:hidden">
         <AppCardTitle
           model={car.car_model || "not provided"}
@@ -45,8 +48,11 @@ const AppCarCard = ({ car }) => {
           wheel={car.right_wheel}
           engine={car.engine_volume}
           price={car.price}
+          client={car.client_name}
         />
-        <AppCardMeta views={car.views} ago={`${orderResult} დღის წინ`} />
+        <div className="hidden w-full md:block">
+          <AppCardMeta views={car.views} ago={`${orderResult} დღის წინ`} />
+        </div>
       </div>
     </div>
   );

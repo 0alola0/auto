@@ -22,11 +22,11 @@ const AppCardTitle = ({ model, year, customs, client, price }) => {
           </h4>
         </div>
         {!customs ? (
-          <span className="px-2 py-1 rounded-md bg-[#FFE3E3] md:bg-transparent text-[11px] leading-tight font-helvetica-neue text-[#FF3B30]">
+          <span className="whitespace-nowrap px-2 py-1 rounded-md bg-[#FFE3E3] md:bg-transparent text-[11px] leading-tight font-helvetica-neue text-[#FF3B30]">
             განბაჟება 2,176 ₾
           </span>
         ) : (
-          <span className="px-2 py-1 rounded-md bg-[#EEFBF1] md:bg-transparent  flex items-center gap-1 text-[11px] leading-tight font-helvetica-neue text-[#1EB676]">
+          <span className="whitespace-nowrap px-2 py-1 rounded-md bg-[#EEFBF1] md:bg-transparent  flex items-center gap-1 text-[11px] leading-tight font-helvetica-neue text-[#1EB676]">
             <svg
               width="8"
               height="6"
