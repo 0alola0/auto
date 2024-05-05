@@ -36,7 +36,7 @@ const page = () => {
     <main>
       <section className="container">
         <AppBreadcrumbs breadcrumbs={["მთავარი", "ძიება", "იყიდება"]} />
-        <div className="flex gap-5">
+        <div className="flex flex-col md:flex-row gap-5">
           <AppSearch total={products?.meta?.total} setSearcher={setFilters}/>
           <AppDisplay total={products?.meta?.total} items={products.items} setSortOrder={setSortOrder} setSortTime={setSortTime}/>
         </div>

@@ -12,17 +12,33 @@ const AppCarCard = ({ car }) => {
 
   let source = `https://static.my.ge/myauto/photos/${car.photo}/thumbs/${car.car_id}_1.jpg?v=${car.photo_ver}`;
   return (
-    <div className="mb-[10px] flex items-center w-full gap-4 p-4 bg-white border-gray rounded-[14px]">
-      <div className="rounded-[10px] overflow-hidden">
-        <AppImage src={source} width="178" height="140" alt={car.car_model} />
-      </div>
-      <div className="w-full">
+    <div className="w-[100vw] ml-[-20px] mb-0 flex flex-col md:flex-row items-center gap-4 p-4 bg-white border-gray rounded-0 md:rounded-[14px] md:mb-[10px] md:w-full md:ml-0">
+      <div className="block w-full md:hidden">
         <AppCardTitle
           model={car.car_model || "not provided"}
           year={car.prod_year}
           customs={car.customs_passed}
           client={car.client_name}
+          price={car.price}
         />
+      </div>
+      <div className="hidden rounded-[10px] overflow-hidden md:block">
+        <AppImage src={source} width="178" height="140" alt={car.car_model} />
+      </div>
+      <div className="rounded-[16px] block overflow-hidden md:hidden">
+        <AppImage src={source} width="344" height="256" alt={car.car_model} />
+      </div>
+      <div className="w-full">
+        <div className="hidden md:block">
+          <AppCardTitle
+            model={car.car_model || "not provided"}
+            year={car.prod_year}
+            customs={car.customs_passed}
+            client={car.client_name}
+            price={car.price}
+          />
+        </div>
+
         <AppCarSpecs
           odometer={car.car_run_km}
           gear={car.gear_type_id}

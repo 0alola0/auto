@@ -95,7 +95,7 @@ const AppSearch = ({ setSearcher, total }) => {
   };
 
   return (
-    <div className="relative max-w-[250px] h-fit overflow-hidden rounded-tl-lg border-gray bg-white">
+    <div className="relative mt-8 max-w-none h-fit overflow-hidden rounded-tl-lg border-gray bg-white md:max-w-[250px] md:mt-0">
       <AppTab tabOptions={TABS} />
       <div className=" p-6 border-b border-b-gray">
         <div className="mb-5">

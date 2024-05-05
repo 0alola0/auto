@@ -1,9 +1,9 @@
 import React from "react";
 import AppImage from "../../AppImage";
 
-const AppCardTitle = ({ model, year, customs, client }) => {
+const AppCardTitle = ({ model, year, customs, client, price }) => {
   return (
-    <div className="flex mb-3 justify-between items-center w-full">
+<div className="flex items-start flex-col md:flex-row mb-3 justify-between md:items-center w-full">
       <div className="flex items-center gap-2">
         <h5 className="font-bold text-[14px] leading-tight font-helvetica-neue">
           {model}
@@ -12,14 +12,21 @@ const AppCardTitle = ({ model, year, customs, client }) => {
           {year} წ.
         </span>
       </div>
-
-      <div className="flex items-center gap-3">
+      <div className="w-full flex items-center justify-between md:justify-end md:w-auto gap-3">
+        <div className="block w-full md:hidden">
+          <h4 className="flex items-center md:justify-end gap-2 font-sailec text-base font-medium text-right">
+            {price}
+            <div className="w-6 h-[26px] rounded-full bg-gray-200 flex items-center justify-center">
+              ₾
+            </div>
+          </h4>
+        </div>
         {!customs ? (
-          <span className="text-[11px] leading-tight font-helvetica-neue text-[#FF3B30]">
+          <span className="px-2 py-1 rounded-md bg-[#FFE3E3] md:bg-transparent text-[11px] leading-tight font-helvetica-neue text-[#FF3B30]">
             განბაჟება 2,176 ₾
           </span>
         ) : (
-          <span className="flex items-center gap-1 text-[11px] leading-tight font-helvetica-neue text-[#1EB676]">
+          <span className="px-2 py-1 rounded-md bg-[#EEFBF1] md:bg-transparent  flex items-center gap-1 text-[11px] leading-tight font-helvetica-neue text-[#1EB676]">
             <svg
               width="8"
               height="6"
@@ -35,10 +42,10 @@ const AppCardTitle = ({ model, year, customs, client }) => {
             განბაჟებული
           </span>
         )}
-        <div className="flex gap-2">
+        <div className="hidden md:flex gap-2">
           <AppImage src="/flagicon.svg" width="16" height="16" alt="flag" />
           <span className="text-xs leading-tight font-helvetica-neue text-[#8C929B]">
-          {client.length > 12 ? `${client.substring(0, 12)}.` : client}
+            {client.length > 12 ? `${client.substring(0, 12)}.` : client}
           </span>
         </div>
       </div>

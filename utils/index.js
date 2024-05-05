@@ -1,4 +1,3 @@
-// utils/index.js
 import axios from 'axios';
 
 const BASE_URL = "https://api2.myauto.ge/ka/products"

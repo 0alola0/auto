@@ -16,7 +16,7 @@ const AppCarSpecs = ({ engine, odometer, gear, wheel, price }) => {
           {odometer} კმ
         </span>
       </div>
-      <div>
+      <div className="hidden md:block">
         <h4 className="flex items-center justify-end gap-2 font-sailec text-base font-medium text-right">
           {price}
           <div className="w-6 h-[26px] rounded-full bg-gray-200 flex items-center justify-center">
